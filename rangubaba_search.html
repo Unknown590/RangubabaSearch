@@ -139,7 +139,6 @@
 <div class="bg-grid"></div>
 <div class="glow-orb"></div>
 
-<!-- HOME -->
 <div id="home">
   <div>
     <div class="logo-text">RangubabaSearch</div>
@@ -156,8 +155,10 @@
       <button class="engine-btn" data-safe="medium">Medium</button>
       <button class="engine-btn" data-safe="high">High</button>
     </div>
+  </div>
+  <div class="footer">No tracking. No filters. Just search.</div>
+</div>
 
-<!-- RESULTS -->
 <div id="results-page">
   <div class="results-header">
     <div class="header-logo" id="back-home">Rangubaba</div>
@@ -174,12 +175,11 @@
 </div>
 
 <script>
-  const API_KEY = 'AIzaSyCPnjD3nneeBFxQErjE5tnQ7ePJB3eHOs4';
+  const API_KEY = 'AIzaSyBiOr-HvjEfDcmvXqbPGtNF26CHr8ZgACQ';
   const CX = 'f5f55fadea2f840dc';
 
   let safeSearch = 'off';
   let currentQuery = '';
-  let currentStart = 1;
 
   document.querySelectorAll('[data-safe]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -192,7 +192,6 @@
   async function doSearch(q, start = 1) {
     if (!q.trim()) return;
     currentQuery = q.trim();
-    currentStart = start;
 
     document.getElementById('home').style.display = 'none';
     document.getElementById('results-page').style.display = 'block';
